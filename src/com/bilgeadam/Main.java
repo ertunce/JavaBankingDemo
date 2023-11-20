@@ -66,21 +66,6 @@ public class Main {
                     + customer1.getAccountList().get(i).getBalance());
         }
 
-
-        //WITHDRAW 55₺ to checking account
-        for( int i = 0; i < customer1.getAccountList().size() ; i++){
-            if(customer1.getAccountList().get(i).getClass() == CheckingAccount.class){
-
-                Transaction transaction = new Transaction(1L,2L, TransactionType.WITHDRAWAL,55.0);
-
-                try {
-                    customer1.getAccountList().get(i).makeTransaction(transaction);
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
-            }
-        }
-
         //WITHDRAW 45₺ to checking account
         for( int i = 0; i < customer1.getAccountList().size() ; i++){
             if(customer1.getAccountList().get(i).getClass() == CheckingAccount.class){
@@ -101,5 +86,18 @@ public class Main {
                     + customer1.getAccountList().get(i).getBalance());
         }
 
+        //WITHDRAW 55₺ to checking account
+        for( int i = 0; i < customer1.getAccountList().size() ; i++){
+            if(customer1.getAccountList().get(i).getClass() == CheckingAccount.class){
+
+                Transaction transaction = new Transaction(1L,2L, TransactionType.WITHDRAWAL,55.0);
+
+                try {
+                    customer1.getAccountList().get(i).makeTransaction(transaction);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+        }
     }
 }
